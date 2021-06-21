@@ -21,7 +21,7 @@ public class CustomArray {
         this.size= size;
     }
 
-    public CustomArray(int[] array) throws ArrayException {
+    public CustomArray(int[] array){
         if(array==null){
             for (int i=0;i<ARRAY_COMMON_SIZE;i++){
                 this.array[i]=0;
@@ -129,6 +129,14 @@ public class CustomArray {
         }
     }
 
+    public int sumOfElements(){
+        int sum=0;
+        for(int i=0;i<size;i++){
+            sum+=array[i];
+        }
+        return sum;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -149,6 +157,6 @@ public class CustomArray {
         String str="";
         for (int i:array)
             str+=i+" ";
-        return this.getClass()+" : "+str+" size: "+size;
+        return this.getClass()+" : "+str+" size: "+size+ " sum: "+sumOfElements();
     }
 }

@@ -4,8 +4,10 @@ import exception.ArrayException;
 
 public class CustomArrayService {
 
-    public static int[] bubbleSort(CustomArray array)throws ArrayException {
-        exceptionThrow(array);
+    public static int[] bubbleSort(CustomArray array) {
+        if(exceptionThrow(array)){
+            return null;
+        }
         int arraySize= array.getSize();
         int[] tempArray=array.getArray();
         int buffer;
@@ -21,8 +23,10 @@ public class CustomArrayService {
         return tempArray;
     }
 
-    public static int[]  selectSort(CustomArray array)throws ArrayException{
-        exceptionThrow(array);
+    public static int[]  selectSort(CustomArray array){
+        if(exceptionThrow(array)){
+            return null;
+        }
         int[] tempArray=array.getArray();
         int size=array.getSize();
         int buffer;
@@ -40,8 +44,10 @@ public class CustomArrayService {
         return tempArray;
     }
 
-    public static int[] insertSort(CustomArray array)throws ArrayException{
-        exceptionThrow(array);
+    public static int[] insertSort(CustomArray array){
+        if(exceptionThrow(array)){
+            return null;
+        }
         int[] tempArray=array.getArray();
         int size=array.getSize();
         int buffer;
@@ -61,8 +67,10 @@ public class CustomArrayService {
     }
 
 
-    public static int findMax(CustomArray array)throws ArrayException{
-        exceptionThrow(array);
+    public static int findMax(CustomArray array){
+        if(exceptionThrow(array)){
+            return 0;
+        }
         if(array.getSize()==1)
             return array.elementAt(0);
         int max=array.elementAt(0);
@@ -73,8 +81,10 @@ public class CustomArrayService {
         return max;
     }
 
-    public static int findMin(CustomArray array)throws  ArrayException{
-        exceptionThrow(array);
+    public static int findMin(CustomArray array){
+        if(exceptionThrow(array)){
+            return 0;
+        }
         if(array.getSize()==1)
             return array.elementAt(0);
         int min=array.elementAt(0);
@@ -86,8 +96,10 @@ public class CustomArrayService {
     }
 
 
-    public static boolean binaryFound(CustomArray array, int element)throws ArrayException{
-        exceptionThrow(array);
+    public static boolean binaryFound(CustomArray array, int element){
+        if(exceptionThrow(array)){
+            return false;
+        }
         int[] tempArray= bubbleSort(array);
 
         int left = 0;
@@ -114,8 +126,10 @@ public class CustomArrayService {
         return result;
     }
 
-    public static int[] numbersFibonachi(CustomArray array)throws ArrayException{
-        exceptionThrow(array);
+    public static int[] numbersFibonachi(CustomArray array){
+        if(exceptionThrow(array)){
+            return null;
+        }
         if(array.getSize()<3){
             return new int[]{0};
         }
@@ -134,8 +148,10 @@ public class CustomArrayService {
         return resultArray;
     }
 
-    public static int[] simpleNumbers(CustomArray array)throws ArrayException{
-        exceptionThrow(array);
+    public static int[] simpleNumbers(CustomArray array){
+        if(exceptionThrow(array)){
+            return null;
+        }
         int[] tempArray=new int[array.getSize()];
         for(int i=0;i<array.getSize();i++){
             if(array.elementAt(i)>1){
@@ -152,8 +168,10 @@ public class CustomArrayService {
         return tempArray;
     }
 
-    public static int[] threeDigitNoRepeat(CustomArray array)throws ArrayException{
-        exceptionThrow(array);
+    public static int[] threeDigitNoRepeat(CustomArray array){
+        if(exceptionThrow(array)){
+            return null;
+        }
         int[] tempArray=new int[array.getSize()];
         int counter=0;
         for(int i=0; i<array.getSize(); i++){
@@ -179,9 +197,10 @@ public class CustomArrayService {
         }
         return resArray;
     }
-    private static void exceptionThrow(CustomArray array)throws ArrayException{
+    private static boolean exceptionThrow(CustomArray array){
         if(array==null){
-            throw new ArrayException("null Array");
+            return true;
         }
+        return false;
     }
 }
