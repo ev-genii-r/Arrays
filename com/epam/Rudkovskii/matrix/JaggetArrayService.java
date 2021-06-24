@@ -2,49 +2,35 @@ package matrix;
 
 import array.CustomArrayService;
 
-public class JaggetArrayService {
+public class JaggetArrayService{
 
-    public static void sortBySum(JaggetArray matrix, boolean ind){
-        int[] array=new int[matrix.getSize()];
-        for(int i=0;i<matrix.getSize();i++){
-            array[i]=matrix.arrayByIndex(i).sumOfElements();
-            if(ind==false){
-                array[i]*=-1;
-            }
-        }
-        sort(matrix,array);
+    public static void sortBySum(JaggetArray matrix, boolean order) {
+        Sorter sorter = (int i) -> {
+            return matrix.arrayByIndex(i).sumOfElements();
+        };
+        sort(matrix, order, sorter);
     }
 
-    public static void sortByMax(JaggetArray matrix,boolean ind){
-        int[] array=new int[matrix.getSize()];
-        for(int i=0;i<matrix.getSize();i++){
-            array[i]= CustomArrayService.findMax(matrix.arrayByIndex(i));
-            if(ind==false){
-                array[i]*=-1;
-            }
-        }
-        sort(matrix,array);
+    public static void sortByMax(JaggetArray matrix, boolean order) {
+        Sorter sorter = (int i) -> {
+            return CustomArrayService.findMax(matrix.arrayByIndex(i));
+        };
+        sort(matrix, order, sorter);
     }
 
-    public static void sortByMin(JaggetArray matrix,boolean ind){
-        int[] array=new int[matrix.getSize()];
-        for(int i=0;i<matrix.getSize();i++){
-            array[i]= CustomArrayService.findMin(matrix.arrayByIndex(i));
-            if(ind==false){
-                array[i]*=-1;
-            }
-        }
-        sort(matrix,array);
+    public static void sortByMin(JaggetArray matrix, boolean order) {
+        Sorter sorter = (int i) -> {
+            return CustomArrayService.findMin(matrix.arrayByIndex(i));
+        };
+        sort(matrix, order, sorter);
     }
 
-    private static void sort(JaggetArray matrix,int[] array){
-        for(int i=0;i<array.length;i++){
-            for(int j=1;j<array.length;j++){
-                if(array[j-1]>array[j]){
-                    int buf=array[j-1];
-                    array[j-1]=array[j];
-                    array[j]=buf;
-                    matrix.changeArrays(j-1,j);
+    private static void sort(JaggetArray matrix, boolean ind, Sorter sorter) {
+        int factor = ind ? 1: -1;
+        for (int i = 0; i < matrix.getSize(); i++) {
+            for (int j = 0; j < matrix.getSize() - 1; j++) {
+                if (sorter.sortType(j)*factor>sorter.sortType(j+1)*factor){
+                    matrix.changeArrays(j,j+1);
                 }
             }
         }

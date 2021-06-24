@@ -1,7 +1,5 @@
 package array;
 
-import exception.ArrayException;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -127,6 +125,8 @@ public class CustomArray {
             tempArray[counter]=array[i];
             counter++;
         }
+        array=tempArray;
+        size--;
     }
 
     public int sumOfElements(){

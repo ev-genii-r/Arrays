@@ -1,11 +1,9 @@
 package array;
 
-import exception.ArrayException;
-
 public class CustomArrayService {
 
     public static int[] bubbleSort(CustomArray array) {
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return null;
         }
         int arraySize= array.getSize();
@@ -24,7 +22,7 @@ public class CustomArrayService {
     }
 
     public static int[]  selectSort(CustomArray array){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return null;
         }
         int[] tempArray=array.getArray();
@@ -45,7 +43,7 @@ public class CustomArrayService {
     }
 
     public static int[] insertSort(CustomArray array){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return null;
         }
         int[] tempArray=array.getArray();
@@ -68,7 +66,7 @@ public class CustomArrayService {
 
 
     public static int findMax(CustomArray array){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return 0;
         }
         if(array.getSize()==1)
@@ -82,7 +80,7 @@ public class CustomArrayService {
     }
 
     public static int findMin(CustomArray array){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return 0;
         }
         if(array.getSize()==1)
@@ -97,7 +95,7 @@ public class CustomArrayService {
 
 
     public static boolean binaryFound(CustomArray array, int element){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return false;
         }
         int[] tempArray= bubbleSort(array);
@@ -127,7 +125,7 @@ public class CustomArrayService {
     }
 
     public static int[] numbersFibonachi(CustomArray array){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return null;
         }
         if(array.getSize()<3){
@@ -149,7 +147,7 @@ public class CustomArrayService {
     }
 
     public static int[] simpleNumbers(CustomArray array){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return null;
         }
         int[] tempArray=new int[array.getSize()];
@@ -169,7 +167,7 @@ public class CustomArrayService {
     }
 
     public static int[] threeDigitNoRepeat(CustomArray array){
-        if(exceptionThrow(array)){
+        if(isNull(array)){
             return null;
         }
         int[] tempArray=new int[array.getSize()];
@@ -197,7 +195,7 @@ public class CustomArrayService {
         }
         return resArray;
     }
-    private static boolean exceptionThrow(CustomArray array){
+    private static boolean isNull(CustomArray array){
         if(array==null){
             return true;
         }
