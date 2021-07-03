@@ -151,19 +151,30 @@ public class CustomArrayService {
             return null;
         }
         int[] tempArray=new int[array.getSize()];
+        int counter = 0;
         for(int i=0;i<array.getSize();i++){
             if(array.elementAt(i)>1){
                 int buffer=0;
                 for(int j=1;j<array.elementAt(i)/2+1;j++){
-                    if(array.elementAt(i)%j==0)
+                    if(array.elementAt(i)%j==0) {
                         buffer++;
+                    }
                 }
                 if(buffer==1){
                     tempArray[i]=array.elementAt(i);
+                    counter++;
                 }
             }
         }
-        return tempArray;
+        int[] resArray= new int[counter];
+        counter=0;
+        for(int i=0;i<array.getSize();i++){
+            if(tempArray[i]!=0){
+                resArray[counter]=tempArray[i];
+                counter++;
+            }
+        }
+        return resArray;
     }
 
     public static int[] threeDigitNoRepeat(CustomArray array){
