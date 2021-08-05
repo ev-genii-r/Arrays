@@ -1,4 +1,4 @@
-package array;
+package com.epam.Rudkovskii.array;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

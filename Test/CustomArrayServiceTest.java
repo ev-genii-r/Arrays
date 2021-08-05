@@ -1,5 +1,5 @@
-import array.CustomArray;
-import array.CustomArrayService;
+import epam.Rudkovskii.array.CustomArray;
+import epam.Rudkovskii.array.CustomArrayService;
 import org.junit.Assert;
 import org.junit.Test;
 

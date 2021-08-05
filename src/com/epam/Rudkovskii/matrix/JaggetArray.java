@@ -1,6 +1,6 @@
-package matrix;
+package com.epam.Rudkovskii.matrix;
 
-import array.CustomArray;
+import com.epam.Rudkovskii.array.CustomArray;
 
 import java.util.Arrays;
 

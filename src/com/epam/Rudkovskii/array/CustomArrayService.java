@@ -1,4 +1,4 @@
-package array;
+package com.epam.Rudkovskii.array;
 
 public class CustomArrayService {
 

@@ -1,6 +1,6 @@
-import array.CustomArray;
-import matrix.JaggetArray;
-import matrix.JaggetArrayService;
+import epam.Rudkovskii.array.CustomArray;
+import epam.Rudkovskii.matrix.JaggetArray;
+import epam.Rudkovskii.matrix.JaggetArrayService;
 import org.junit.Assert;
 import org.junit.Test;
 

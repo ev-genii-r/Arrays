@@ -1,6 +1,6 @@
-package matrix;
+package com.epam.Rudkovskii.matrix;
 
-import array.CustomArrayService;
+import com.epam.Rudkovskii.array.CustomArrayService;
 
 public class JaggetArrayService{
 

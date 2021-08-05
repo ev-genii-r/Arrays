@@ -1,9 +1,9 @@
-package runner;
+package com.epam.Rudkovskii.runner;
 
-import array.CustomArray;
-import exception.ArrayException;
-import matrix.JaggetArray;
-import matrix.JaggetArrayService;
+import com.epam.Rudkovskii.array.CustomArray;
+import com.epam.Rudkovskii.exception.ArrayException;
+import com.epam.Rudkovskii.matrix.JaggetArray;
+import com.epam.Rudkovskii.matrix.JaggetArrayService;
 
 public class Runner {
     public static void main(String[] args) throws ArrayException {
